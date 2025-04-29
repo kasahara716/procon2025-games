@@ -14,13 +14,21 @@ jobs:
               with:
                   node-version: '22.x'
 
+            - name: Install pnpm
+              uses: pnpm/setup-node@v4
+              with:
+                  run_install: false
+
+            - name: Get pnpm store directory
+              shell: bash
+              run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
             - name: Cache dependencies
               uses: actions/cache@v4
               with:
-                  path: ~/.pnpm
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-
+                  path: ${{ env.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.json') }}
+                  restore-keys: ${{ runner.os }}-pnpm-store-
 
             - name: install
               run: pnpm install --frozen-lockfile
