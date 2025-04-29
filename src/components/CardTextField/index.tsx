@@ -16,7 +16,7 @@ type Props = {
 
 export default function CardTextField({ title, value, onChange }: Props) {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        onChange && onChange(event.target.value);
+        if (onChange) onChange(event.target.value);
     };
     return (
         <Card>

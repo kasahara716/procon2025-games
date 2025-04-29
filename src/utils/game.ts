@@ -34,7 +34,7 @@ export const validateField = (field: FieldData): boolean => {
     const maxValue = (field.size * field.size) / 2 - 1;
 
     // 値が出現する回数を数えるため
-    let values = new Array(maxValue + 1).fill(0);
+    const values = new Array(maxValue + 1).fill(0);
 
     for (let i = 0; i < field.size; i++) {
         // サイズが異なるときは無効

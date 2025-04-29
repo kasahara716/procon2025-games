@@ -46,7 +46,7 @@ export default function PlayerPage() {
                 setN(2);
                 setOperations([]);
             }
-        } catch (e) {}
+        } catch {}
     };
 
     const handleCellClick = (x: number, y: number) => {

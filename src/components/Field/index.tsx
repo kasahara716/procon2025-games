@@ -1,6 +1,6 @@
 'use client';
 
-import { isPair, type FieldData } from '~/utils/game';
+import { type FieldData } from '~/utils/game';
 
 type Props = {
     field: FieldData;
@@ -17,7 +17,7 @@ export default function Field({
 }: Props) {
     const handleClick = (x: number, y: number) => {
         return () => {
-            onCellClick && onCellClick(x, y);
+            if (onCellClick) onCellClick(x, y);
         };
     };
 
