@@ -1,0 +1,50 @@
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+
+            - name: Cache dependencies
+              uses: actions/cache@v4
+              with:
+                  path: ~/.pnpm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
+
+            - name: install
+              run: pnpm install --frozen-lockfile
+
+            - name: build
+              run: pnpm build
+
+            - name: add nojekyll
+              run: touch ./out/.nojekyll
+
+            - name: upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: out
+    deploy:
+        needs: build
+        permissions:
+            pages: write
+            id-token: write
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
