@@ -14,7 +14,7 @@ import Analytics from '~/components/Analytics';
 import theme from '~/theme';
 
 export const metadata: Metadata = {
-    title: '',
+    title: 'プロコン2025',
     description: '',
 };
 
@@ -54,7 +54,16 @@ export default function RootLayout({
                                 </Typography>
                             </Toolbar>
                         </AppBar>
-                        <Box component="main" sx={{ flexGrow: 1 }}>
+                        <Box
+                            component="main"
+                            sx={{
+                                flexGrow: 1,
+                                mt: ['48px', '56px', '64px'],
+                                p: 3,
+                                paddingLeft: 0,
+                                paddingRight: 0,
+                            }}
+                        >
                             {children}
                         </Box>
                     </ThemeProvider>
