@@ -3,7 +3,6 @@
 import {
     Paper,
     Skeleton,
-    Tab,
     Table,
     TableBody,
     TableCell,
