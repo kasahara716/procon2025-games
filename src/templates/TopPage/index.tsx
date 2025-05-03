@@ -1,9 +1,10 @@
 'use client';
 
-import { Container } from '@mui/material';
+import { Container, Stack } from '@mui/material';
 import Link from 'next/link';
 import { useFetchProblems } from '~/apis/problems';
 import { TopPageLoading } from './loading';
+import ProblemItem from '~/components/ProblemItem';
 
 export function TopPageTemplate() {
     const { data, isLoading } = useFetchProblems();
@@ -15,13 +16,11 @@ export function TopPageTemplate() {
     return (
         <Container>
             <Link href="/player">プレイヤー</Link>
-            {data.problems.map((problem: { title: string; id: number }) => (
-                <div key={problem.id}>
-                    <Link href={`/problem?id=${problem.id}`}>
-                        {problem.title}
-                    </Link>
-                </div>
-            ))}
+            <Stack spacing={2}>
+                {data.problems.map((problem: { title: string; id: number }) => (
+                    <ProblemItem key={problem.id} problem={problem} />
+                ))}
+            </Stack>
         </Container>
     );
 }

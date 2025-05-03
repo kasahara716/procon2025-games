@@ -22,8 +22,10 @@ export const useFetchProblems = (page: number = 1) => {
 };
 
 export const useFetchProblem = (id?: number) => {
-    return useSWR(
-        id ? `${API_URL}/procon2025/problems/${id}/detail` : undefined,
-        fetcher,
-    );
+    return useSWR<{
+        id: number;
+        title: string;
+        fieldSize: number;
+        fieldEntities: number[][];
+    }>(id ? `${API_URL}/procon2025/problems/${id}/detail` : undefined, fetcher);
 };
