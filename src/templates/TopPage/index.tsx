@@ -1,15 +1,21 @@
+'use client';
+
 import { Container } from '@mui/material';
 import Link from 'next/link';
+import { useFetchProblems } from '~/apis/problems';
+import { TopPageLoading } from './loading';
 
-type Props = {
-    data: { problems: { id: number; title: string }[]; total: number };
-};
+export function TopPageTemplate() {
+    const { data, isLoading } = useFetchProblems();
 
-export function TopPageTemplate({ data }: Props) {
+    if (isLoading) {
+        return <TopPageLoading />;
+    }
+
     return (
         <Container>
             <Link href="/player">プレイヤー</Link>
-            {data.problems.map((problem) => (
+            {data.problems.map((problem: { title: string; id: number }) => (
                 <div key={problem.id}>
                     <Link href={`/problem?id=${problem.id}`}>
                         {problem.title}
