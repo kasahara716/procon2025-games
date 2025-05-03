@@ -1,12 +1,15 @@
-import { Container } from '@mui/material';
-import Link from 'next/link';
+'use client';
 
-export default function Home() {
-    return (
-        <Container>
-            <div>
-                <Link href="/player">プレイヤー</Link>
-            </div>
-        </Container>
-    );
+import { useFetchProblems } from '~/apis/problems';
+import { TopPageTemplate } from '~/templates/TopPage';
+import { TopPageLoading } from '~/templates/TopPage/loading';
+
+export default function TopPage() {
+    const { data, error, isLoading } = useFetchProblems();
+
+    if (isLoading) {
+        return <TopPageLoading />;
+    }
+
+    return <TopPageTemplate data={data} />;
 }

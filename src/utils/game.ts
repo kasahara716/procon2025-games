@@ -105,9 +105,6 @@ export const rotate = (field: FieldData, ops: Operation): FieldData => {
 
     for (let i = 0; i < ops.n; i++) {
         for (let j = 0; j < ops.n; j++) {
-            console.log(
-                `${ops.x + i}:${ops.y + j} <= ${ops.x + ops.n - 1 - j}:${ops.y + i}`,
-            );
             entities[ops.x + i][ops.y + j] =
                 field.entities[ops.x + ops.n - 1 - j][ops.y + i];
         }
