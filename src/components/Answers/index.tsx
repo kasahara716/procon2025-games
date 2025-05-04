@@ -14,9 +14,10 @@ import { useFetchAnswers } from '~/apis/answers';
 
 type Props = {
     problemId: number;
+    maxPairCount: number;
 };
 
-export default function Answers({ problemId }: Props) {
+export default function Answers({ problemId, maxPairCount }: Props) {
     const { data, isLoading } = useFetchAnswers(problemId);
 
     if (isLoading) {
@@ -38,7 +39,9 @@ export default function Answers({ problemId }: Props) {
                     {data?.answers.map((answer, index) => (
                         <TableRow key={answer.id}>
                             <TableCell>{index + 1}</TableCell>
-                            <TableCell>{answer.pairCount}</TableCell>
+                            <TableCell>
+                                {answer.pairCount} / {maxPairCount}
+                            </TableCell>
                             <TableCell>{answer.operationCount}</TableCell>
                             <TableCell>{answer.user.name}</TableCell>
                         </TableRow>

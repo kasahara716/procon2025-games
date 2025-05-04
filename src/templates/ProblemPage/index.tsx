@@ -43,7 +43,10 @@ export function ProblemPageTemplate() {
                 回答一覧
             </Typography>
             <Box sx={{ paddingTop: 2, paddingBottom: 2 }}>
-                <Answers problemId={data.id} />
+                <Answers
+                    problemId={data.id}
+                    maxPairCount={data.fieldSize * data.fieldSize}
+                />
             </Box>
         </Container>
     );
