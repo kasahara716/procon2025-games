@@ -16,7 +16,10 @@ export type Problem = {
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export const useFetchProblems = (page: number = 1) => {
-    return useSWR(
+    return useSWR<{
+        problems: { id: number; fieldSize: number; title: string }[];
+        totalCount: number;
+    }>(
         `${API_URL}/procon2025/problems?limit=20&offset=${(page - 1) * 20}`,
         fetcher,
     );
