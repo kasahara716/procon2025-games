@@ -20,17 +20,14 @@ export function TopPageTemplate() {
     const page = searchParams.get('page')
         ? Number(searchParams.get('page'))
         : 1;
-    const { data, isLoading } = useFetchProblems();
+    const { data, isLoading } = useFetchProblems(page);
     const router = useRouter();
 
     if (isLoading) {
         return <TopPageLoading />;
     }
 
-    const handleChangePage = (
-        event: React.ChangeEvent<unknown>,
-        page: number,
-    ) => {
+    const handleChangePage = (_: React.ChangeEvent<unknown>, page: number) => {
         router.push(`/?page=${page}`);
     };
 
