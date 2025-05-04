@@ -15,7 +15,7 @@ export function TopPageTemplate() {
 
     return (
         <Container>
-            <Link href="/player">プレイヤー</Link>
+            <Link href="/player">手動プレイヤー</Link>
             <Stack spacing={2}>
                 {data.problems.map((problem: { title: string; id: number }) => (
                     <ProblemItem key={problem.id} problem={problem} />

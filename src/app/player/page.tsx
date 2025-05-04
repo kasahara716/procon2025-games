@@ -12,10 +12,10 @@ import { FieldData, isPair, rotate, validateField } from '~/utils/game';
 const DEFAULT_FIELD: FieldData = {
     size: 4,
     entities: [
-        [2, 1, 3, 7],
-        [5, 3, 1, 0],
-        [6, 2, 4, 5],
-        [0, 7, 6, 4],
+        [6, 3, 4, 0],
+        [1, 5, 3, 5],
+        [2, 7, 0, 6],
+        [1, 2, 7, 4],
     ],
 };
 
