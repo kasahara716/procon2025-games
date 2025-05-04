@@ -18,8 +18,8 @@ export default function ProblemItem({ problem }: Props) {
                     <Grid size={1}>
                         <Box>{problem.id}</Box>
                     </Grid>
-                    <Grid size={10}>{problem.title}</Grid>
-                    <Grid size={1} sx={{ textAlign: 'center' }}>
+                    <Grid size={9}>{problem.title}</Grid>
+                    <Grid size={2} sx={{ textAlign: 'center' }}>
                         {problem.fieldSize}
                     </Grid>
                 </Grid>

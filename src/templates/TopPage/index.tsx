@@ -44,10 +44,10 @@ export function TopPageTemplate() {
                     <Grid size={1} sx={{ textAlign: 'center' }}>
                         ID
                     </Grid>
-                    <Grid size={10} sx={{ textAlign: 'center' }}>
+                    <Grid size={9} sx={{ textAlign: 'center' }}>
                         タイトル
                     </Grid>
-                    <Grid size={1} sx={{ textAlign: 'center' }}>
+                    <Grid size={2} sx={{ textAlign: 'center' }}>
                         サイズ
                     </Grid>
                 </Grid>

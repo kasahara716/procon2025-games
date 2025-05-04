@@ -93,7 +93,7 @@ export default function RootLayout({
                                     <Box
                                         sx={{
                                             flexGrow: 0,
-                                            display: { xs: 'flex', md: 'none' },
+                                            display: { xs: 'flex', sm: 'none' },
                                         }}
                                     >
                                         <IconButton
@@ -110,7 +110,7 @@ export default function RootLayout({
                                     <Box
                                         sx={{
                                             flexGrow: 0,
-                                            display: { xs: 'none', md: 'flex' },
+                                            display: { xs: 'none', sm: 'flex' },
                                         }}
                                     >
                                         {navItems.map((item, index) => (
