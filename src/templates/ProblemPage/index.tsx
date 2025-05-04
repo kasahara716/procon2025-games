@@ -2,15 +2,16 @@
 
 import { Box, Container, Typography } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
-import { useFetchProblem } from '~/apis/problems';
+import { useFetchProblemDetail } from '~/apis/problems';
 import { ProblemPageLoading } from './loading';
 import Field from '~/components/Field';
 import Answers from '~/components/Answers';
+import Link from 'next/link';
 
 export function ProblemPageTemplate() {
     const searchParams = useSearchParams();
     const id = searchParams.get('id');
-    const { data, error, isLoading } = useFetchProblem(
+    const { data, error, isLoading } = useFetchProblemDetail(
         id ? parseInt(id, 10) : undefined,
     );
 
@@ -34,6 +35,9 @@ export function ProblemPageTemplate() {
                         entities: data.fieldEntities,
                     }}
                 />
+                <Link href={`/player?id=${id}`}>
+                    このフィールドを手動で試す
+                </Link>
             </Box>
             <Typography variant="h2" component="h2" sx={{ fontSize: '2em' }}>
                 回答一覧
