@@ -43,7 +43,9 @@ export default function Answers({ problemId, maxPairCount }: Props) {
                                 {answer.pairCount} / {maxPairCount}
                             </TableCell>
                             <TableCell>{answer.operationCount}</TableCell>
-                            <TableCell>{answer.user.name}</TableCell>
+                            <TableCell>
+                                {answer.user.name}◆{answer.user.handle}
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

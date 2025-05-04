@@ -10,8 +10,8 @@ export type Answer = {
     pairCount: number;
     operationCount: number;
     user: {
-        id: string;
         name: string;
+        handle: string;
     };
 };
 
