@@ -113,7 +113,6 @@ export default function SignupPage() {
             secret: data.get('secret') as string,
             schoolName: data.get('schoolName') as string,
         });
-        console.log(result);
         if ('statusCode' in result) {
             if (result.statusCode !== 201) {
                 setSendErrorMessage('ユーザー登録に失敗しました');

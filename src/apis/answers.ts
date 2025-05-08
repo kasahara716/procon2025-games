@@ -1,6 +1,7 @@
 'use client';
 
 import useSWR from 'swr';
+import useSWRMutation from 'swr/mutation';
 
 const API_URL =
     process.env.NEXT_PUBLIC_API_URL || 'https://proconapi.kasahara.dev';
@@ -24,5 +25,35 @@ export const useFetchAnswers = (id: number, offset: number = 0) => {
     }>(
         `${API_URL}/procon2025/answers?problemId=${id}&offset=${offset}&sort=ranking`,
         fetcher,
+    );
+};
+
+const sendAnser = async (
+    url: string,
+    {
+        arg,
+    }: {
+        arg: {
+            token: string;
+            /** JSON文字列 */
+            answer: string;
+        };
+    },
+) => {
+    return fetch(url, {
+        method: 'POST',
+        body: arg.answer,
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${arg.token}`,
+        },
+    }).then((res) => res.json());
+};
+
+export const useSendAnswer = (problemId: number) => {
+    return useSWRMutation(
+        `${API_URL}/procon2025/answers/${problemId}`,
+        sendAnser,
     );
 };

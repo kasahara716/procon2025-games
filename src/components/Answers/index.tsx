@@ -42,7 +42,7 @@ export default function Answers({ problemId, maxPairCount, page }: Props) {
                             <TableCell>#</TableCell>
                             <TableCell>ペア数</TableCell>
                             <TableCell>操作数</TableCell>
-                            <TableCell>回答者</TableCell>
+                            <TableCell>解答者</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

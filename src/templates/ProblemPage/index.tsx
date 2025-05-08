@@ -1,6 +1,15 @@
 'use client';
 
-import { Box, Container, Typography } from '@mui/material';
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Box,
+    Container,
+    Divider,
+    Typography,
+} from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useSearchParams } from 'next/navigation';
 import { useFetchProblemDetail } from '~/apis/problems';
 import { ProblemPageLoading } from './loading';
@@ -8,6 +17,7 @@ import Field from '~/components/Field';
 import Answers from '~/components/Answers';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import AnswerSender from '~/components/AnswerSender';
 
 export function ProblemPageTemplate() {
     const searchParams = useSearchParams();
@@ -43,8 +53,19 @@ export function ProblemPageTemplate() {
                     このフィールドを手動で試す
                 </Link>
             </Box>
+            <Box sx={{ paddingTop: 2, paddingBottom: 2 }}>
+                <Accordion>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                        <Typography>解答をブラウザで送信する</Typography>
+                    </AccordionSummary>
+                    <Divider />
+                    <AccordionDetails>
+                        <AnswerSender problemId={data.id} />
+                    </AccordionDetails>
+                </Accordion>
+            </Box>
             <Typography variant="h4" component="h2">
-                回答一覧
+                解答一覧
             </Typography>
             <Box sx={{ paddingTop: 2, paddingBottom: 2 }}>
                 <Suspense>
