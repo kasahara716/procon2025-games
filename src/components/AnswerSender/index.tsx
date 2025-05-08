@@ -1,4 +1,5 @@
 import { Alert, Box, Button, TextField, Typography } from '@mui/material';
+import Link from 'next/link';
 import { useState } from 'react';
 import { useSendAnswer } from '~/apis/answers';
 
@@ -58,22 +59,29 @@ export default function AnswerSender({ problemId }: Props) {
                 </Alert>
             )}
             <Box component="form" autoComplete="off" onSubmit={handleSubmit}>
-                <Box>
+                <Box sx={{ mb: 2 }}>
                     <TextField
                         name="token"
                         required
                         label="Token"
-                        sx={{ mb: 2, width: { xs: '100%', md: '50%' } }}
+                        sx={{ width: { xs: '100%', md: '50%' } }}
                         disabled={isMutating}
                     ></TextField>
+                    <Typography
+                        variant="caption"
+                        sx={{ verticalAlign: 'bottom' }}
+                    >
+                        トークンは<Link href="/signup">こちら</Link>
+                        でユーザー登録をして発行してください
+                    </Typography>
                 </Box>
-                <Box>
+                <Box sx={{ mb: 2 }}>
                     <TextField
                         name="answer"
                         multiline
                         label="解答"
                         rows={4}
-                        sx={{ width: '100%', mb: 2 }}
+                        sx={{ width: '100%' }}
                         disabled={isMutating}
                     ></TextField>
                 </Box>
