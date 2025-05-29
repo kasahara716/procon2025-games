@@ -33,7 +33,37 @@ export default function AboutPage() {
                     </a>
                     の競技部門の競技練習場です
                 </Typography>
+                <Typography
+                    variant="body1"
+                    component="p"
+                    sx={{ fontSize: '1.1em' }}
+                >
+                    競技部門本選より前に切磋琢磨することでより良い結果を目指せるようにという思いを込めて作成しました。
+                </Typography>
             </Box>
+            <Box sx={{ pb: 2 }}>
+                <Typography
+                    variant="h2"
+                    component="h2"
+                    sx={{ fontSize: '1.5em' }}
+                >
+                    問題を提供したい場合
+                </Typography>
+                <Typography
+                    variant="body1"
+                    component="p"
+                    sx={{ fontSize: '1.1em' }}
+                >
+                    <a
+                        href="https://forms.gle/FXiQbSbfgkzJir3PA"
+                        target="_blank"
+                    >
+                        こちらのGoogleForm
+                    </a>
+                    から問題を送信いただければ確認の上問題を追加します
+                </Typography>
+            </Box>
+
             <Box sx={{ pb: 2 }}>
                 <Typography
                     variant="h2"
