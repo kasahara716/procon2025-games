@@ -52,13 +52,13 @@ export default function OperationPanel({
                 <Box>
                     <List>
                         <ListItem
-                            secondaryAction={<Typography>{y}</Typography>}
+                            secondaryAction={<Typography>{x}</Typography>}
                         >
                             <ListItemText>X</ListItemText>
                         </ListItem>
                         <Divider />
                         <ListItem
-                            secondaryAction={<Typography>{x}</Typography>}
+                            secondaryAction={<Typography>{y}</Typography>}
                         >
                             <ListItemText>Y</ListItemText>
                         </ListItem>
