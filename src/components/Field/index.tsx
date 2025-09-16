@@ -24,10 +24,10 @@ export default function Field({
     return (
         <>
             <table>
-                {field.entities.map((row, x) => {
+                {field.entities.map((row, y) => {
                     return (
-                        <tr key={`${x}`}>
-                            {row.map((col, y) => {
+                        <tr key={`${y}`}>
+                            {row.map((col, x) => {
                                 return (
                                     <td key={`${x}-${y}`}>
                                         <div

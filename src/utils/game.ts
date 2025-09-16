@@ -105,8 +105,8 @@ export const rotate = (field: FieldData, ops: Operation): FieldData => {
 
     for (let i = 0; i < ops.n; i++) {
         for (let j = 0; j < ops.n; j++) {
-            entities[ops.x + i][ops.y + j] =
-                field.entities[ops.x + ops.n - 1 - j][ops.y + i];
+            entities[ops.y + i][ops.x + j] =
+                field.entities[ops.y + ops.n - 1 - j][ops.x + i];
         }
     }
 
