@@ -21,6 +21,8 @@ export type Operation = {
 
 /** フィールドが正常か確認 */
 export const validateField = (field: FieldData): boolean => {
+    if (field.size === undefined || field.entities === undefined) return false;
+
     // サイズが異なるときは無効
     if (field.size !== field.entities.length) return false;
 
@@ -67,6 +69,9 @@ export const validateField = (field: FieldData): boolean => {
 
 /** 操作が正常か確認 */
 const validateOperation = (field: FieldData, ops: Operation): boolean => {
+    if (ops.x === undefined || ops.y === undefined || ops.n === undefined)
+        return false;
+
     // 操作する範囲の横幅がフィールドを超える
     if (field.size < ops.x + ops.n) return false;
 
@@ -79,17 +84,17 @@ const validateOperation = (field: FieldData, ops: Operation): boolean => {
 /** 該当する座標のブロックがペアになっているか確認する */
 export const isPair = (field: FieldData, x: number, y: number): boolean => {
     // 左側が同じ数字か確認する
-    if (x > 0 && field.entities[x][y] === field.entities[x - 1][y]) return true;
+    if (x > 0 && field.entities[y][x] === field.entities[y][x - 1]) return true;
 
     // 右側が同じ数字か確認する
-    if (x + 1 < field.size && field.entities[x][y] === field.entities[x + 1][y])
+    if (x + 1 < field.size && field.entities[y][x] === field.entities[y][x + 1])
         return true;
 
     // 上が同じ数字か確認する
-    if (y > 0 && field.entities[x][y] === field.entities[x][y - 1]) return true;
+    if (y > 0 && field.entities[y][x] === field.entities[y - 1][x]) return true;
 
     // 下が同じ数字か確認する
-    if (y + 1 < field.size && field.entities[x][y] === field.entities[x][y + 1])
+    if (y + 1 < field.size && field.entities[y][x] === field.entities[y + 1][x])
         return true;
 
     return false;
