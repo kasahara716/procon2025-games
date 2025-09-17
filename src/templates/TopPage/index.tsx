@@ -1,6 +1,8 @@
 'use client';
 
 import {
+    Alert,
+    AlertTitle,
     Box,
     Button,
     Container,
@@ -33,10 +35,20 @@ export function TopPageTemplate() {
 
     return (
         <Container>
-            <Button variant="contained" component={Link} href="/player">
+            <Alert variant="filled" severity="warning" sx={{ mb: 4 }}>
+                <AlertTitle>重要なお知らせ</AlertTitle>
+                9月16日までの本サイトでの回答提出にあたってX座標とY座標が逆になっていることが判明し修正いたしました。
+                ご迷惑をおかけし、また混乱を生むような形となってしまい申し訳ございませんでした
+            </Alert>
+            <Button
+                variant="contained"
+                component={Link}
+                href="/player"
+                sx={{ mb: 4 }}
+            >
                 手動プレイヤー
             </Button>
-            <Typography variant="h4" component="h1" sx={{ mt: 4 }}>
+            <Typography variant="h4" component="h1">
                 問題一覧
             </Typography>
             <Stack spacing={2}>
