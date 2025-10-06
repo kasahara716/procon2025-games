@@ -30,7 +30,7 @@ export default function Answers({ problemId, maxPairCount, page }: Props) {
     }
 
     const handleChangePage = (_: React.ChangeEvent<unknown>, page: number) => {
-        router.push(`/problems?page=${page}`);
+        router.push(`/problem?id=${problemId}&page=${page}`);
     };
 
     return (
@@ -48,7 +48,9 @@ export default function Answers({ problemId, maxPairCount, page }: Props) {
                     <TableBody>
                         {data?.answers.map((answer, index) => (
                             <TableRow key={answer.id}>
-                                <TableCell>{index + 1}</TableCell>
+                                <TableCell>
+                                    {index + 1 + (page - 1) * 20}
+                                </TableCell>
                                 <TableCell>
                                     {answer.pairCount} / {maxPairCount}
                                 </TableCell>

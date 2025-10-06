@@ -23,7 +23,7 @@ export const useFetchAnswers = (id: number, offset: number = 0) => {
         answers: Answer[];
         totalCount: number;
     }>(
-        `${API_URL}/procon2025/answers?problemId=${id}&offset=${offset}&sort=ranking`,
+        `${API_URL}/procon2025/answers?problemId=${id}&offset=${offset}&sort=ranking&limit=20`,
         fetcher,
     );
 };
