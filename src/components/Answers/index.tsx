@@ -23,7 +23,7 @@ type Props = {
 
 export default function Answers({ problemId, maxPairCount, page }: Props) {
     const router = useRouter();
-    const { data, isLoading } = useFetchAnswers(problemId, (page - 1) * 20);
+    const { data, isLoading } = useFetchAnswers(problemId, (page - 1) * 100);
 
     if (isLoading) {
         return <Skeleton variant="rectangular" width="100%" height={200} />;
@@ -49,7 +49,7 @@ export default function Answers({ problemId, maxPairCount, page }: Props) {
                         {data?.answers.map((answer, index) => (
                             <TableRow key={answer.id}>
                                 <TableCell>
-                                    {index + 1 + (page - 1) * 20}
+                                    {index + 1 + (page - 1) * 100}
                                 </TableCell>
                                 <TableCell>
                                     {answer.pairCount} / {maxPairCount}
@@ -67,7 +67,7 @@ export default function Answers({ problemId, maxPairCount, page }: Props) {
             <Box sx={{ textAlign: 'center', mt: 4 }}>
                 <Pagination
                     sx={{ display: 'inline-block' }}
-                    count={Math.ceil((data?.totalCount || 1) / 20)}
+                    count={Math.ceil((data?.totalCount || 1) / 100)}
                     defaultPage={page}
                     onChange={handleChangePage}
                 />
