@@ -1,7 +1,6 @@
 'use client';
 
 import { Box, Grid, Paper } from '@mui/material';
-import Link from 'next/link';
 
 type Props = {
     problem: { id: number; title: string; fieldSize: number };
@@ -9,7 +8,7 @@ type Props = {
 
 export default function ProblemItem({ problem }: Props) {
     return (
-        <Link
+        <a
             href={`/problem?id=${problem.id}`}
             style={{ textDecoration: 'none' }}
         >
@@ -24,6 +23,6 @@ export default function ProblemItem({ problem }: Props) {
                     </Grid>
                 </Grid>
             </Paper>
-        </Link>
+        </a>
     );
 }
