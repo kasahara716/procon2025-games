@@ -1,8 +1,6 @@
 'use client';
 
 import {
-    Alert,
-    AlertTitle,
     Box,
     Button,
     Container,
@@ -35,11 +33,6 @@ export function TopPageTemplate() {
 
     return (
         <Container>
-            <Alert variant="filled" severity="warning" sx={{ mb: 4 }}>
-                <AlertTitle>重要なお知らせ</AlertTitle>
-                9月16日までの本サイトでの回答提出にあたってX座標とY座標が逆になっていることが判明し修正いたしました。
-                ご迷惑をおかけし、また混乱を生むような形となってしまい申し訳ございませんでした
-            </Alert>
             <Button
                 variant="contained"
                 component={Link}
@@ -68,7 +61,9 @@ export function TopPageTemplate() {
                         title: string;
                         id: number;
                         fieldSize: number;
-                    }) => <ProblemItem key={problem.id} problem={problem} />,
+                    }) => (
+                        <ProblemItem key={problem.id} problem={problem} />
+                    ),
                 )}
             </Stack>
             <Box sx={{ textAlign: 'center', mt: 4 }}>
