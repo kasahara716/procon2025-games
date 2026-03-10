@@ -20,7 +20,7 @@ export default function AboutPage() {
                     <a href="https://www.procon.gr.jp/" target="_blank">
                         高専プロコン
                     </a>
-                    の競技部門の競技練習場でした
+                    の競技部門の競技練習場でした。現在はRead-Onlyとして公開されております
                 </Typography>
             </Box>
 
