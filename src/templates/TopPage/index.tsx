@@ -1,6 +1,13 @@
 'use client';
 
-import { Button, Container, Grid, Stack, Typography } from '@mui/material';
+import {
+    Alert,
+    Button,
+    Container,
+    Grid,
+    Stack,
+    Typography,
+} from '@mui/material';
 import Link from 'next/link';
 import { useFetchProblems } from '~/apis/problems';
 import { TopPageLoading } from './loading';
@@ -15,6 +22,9 @@ export function TopPageTemplate() {
 
     return (
         <Container>
+            <Alert severity="info" sx={{ mb: 4 }}>
+                現在解答の送信は受け付けておりません。このサイトはRead-Onlyになっています
+            </Alert>
             <Button
                 variant="contained"
                 component={Link}
