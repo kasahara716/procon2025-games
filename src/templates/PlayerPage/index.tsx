@@ -43,8 +43,8 @@ export function PlayerPageTemplate() {
 
     useEffect(() => {
         if (data) {
-            setFieldRowData(JSON.stringify(data.problem.field));
-            setField(data.problem.field);
+            setFieldRowData(JSON.stringify(data.fieldEntities));
+            setField({ size: data.fieldSize, entities: data.fieldEntities });
         }
     }, [data]);
 

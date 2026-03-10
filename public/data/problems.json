@@ -1,0 +1,170 @@
+[
+    {
+        "id": 28,
+        "title": "決勝第1試合",
+        "fieldSize": 24,
+        "createdAt": "2025-10-12T11:28:08.925Z"
+    },
+    {
+        "id": 27,
+        "title": "ラストワン決定戦第1試合",
+        "fieldSize": 20,
+        "createdAt": "2025-10-12T11:27:53.105Z"
+    },
+    {
+        "id": 26,
+        "title": "準決勝第4試合",
+        "fieldSize": 20,
+        "createdAt": "2025-10-12T11:27:32.409Z"
+    },
+    {
+        "id": 25,
+        "title": "準決勝第3試合",
+        "fieldSize": 20,
+        "createdAt": "2025-10-12T11:27:18.327Z"
+    },
+    {
+        "id": 24,
+        "title": "準決勝第2試合",
+        "fieldSize": 20,
+        "createdAt": "2025-10-12T11:27:03.835Z"
+    },
+    {
+        "id": 23,
+        "title": "準決勝第1試合",
+        "fieldSize": 20,
+        "createdAt": "2025-10-12T11:26:48.172Z"
+    },
+    {
+        "id": 22,
+        "title": "敗者復活戦第3試合",
+        "fieldSize": 16,
+        "createdAt": "2025-10-12T11:26:03.309Z"
+    },
+    {
+        "id": 21,
+        "title": "敗者復活戦第2試合",
+        "fieldSize": 16,
+        "createdAt": "2025-10-12T11:25:43.899Z"
+    },
+    {
+        "id": 20,
+        "title": "敗者復活戦第1試合",
+        "fieldSize": 16,
+        "createdAt": "2025-10-12T11:25:03.638Z"
+    },
+    {
+        "id": 19,
+        "title": "1回戦第6試合",
+        "fieldSize": 14,
+        "createdAt": "2025-10-11T06:29:24.171Z"
+    },
+    {
+        "id": 18,
+        "title": "1回戦第5試合",
+        "fieldSize": 14,
+        "createdAt": "2025-10-11T06:28:44.420Z"
+    },
+    {
+        "id": 17,
+        "title": "1回戦第4試合",
+        "fieldSize": 14,
+        "createdAt": "2025-10-11T06:28:07.180Z"
+    },
+    {
+        "id": 16,
+        "title": "1回戦第3試合",
+        "fieldSize": 14,
+        "createdAt": "2025-10-11T06:27:30.105Z"
+    },
+    {
+        "id": 15,
+        "title": "1回戦第2試合",
+        "fieldSize": 14,
+        "createdAt": "2025-10-11T06:26:36.554Z"
+    },
+    {
+        "id": 14,
+        "title": "1回戦第1試合",
+        "fieldSize": 14,
+        "createdAt": "2025-10-11T06:25:01.522Z"
+    },
+    {
+        "id": 13,
+        "title": "予行演習第6試合",
+        "fieldSize": 8,
+        "createdAt": "2025-10-11T06:23:55.993Z"
+    },
+    {
+        "id": 12,
+        "title": "予行演習第5試合",
+        "fieldSize": 8,
+        "createdAt": "2025-10-11T06:23:06.207Z"
+    },
+    {
+        "id": 11,
+        "title": "予行演習第4試合",
+        "fieldSize": 8,
+        "createdAt": "2025-10-11T06:22:25.695Z"
+    },
+    {
+        "id": 10,
+        "title": "予行演習第3試合",
+        "fieldSize": 8,
+        "createdAt": "2025-10-11T06:21:40.068Z"
+    },
+    {
+        "id": 9,
+        "title": "予行演習第2試合",
+        "fieldSize": 8,
+        "createdAt": "2025-10-11T06:20:42.045Z"
+    },
+    {
+        "id": 8,
+        "title": "予行演習第1試合",
+        "fieldSize": 8,
+        "createdAt": "2025-10-11T06:19:10.444Z"
+    },
+    {
+        "id": 7,
+        "title": "仲間外れ",
+        "fieldSize": 8,
+        "createdAt": "2025-09-05T04:45:46.856Z"
+    },
+    {
+        "id": 6,
+        "title": "8x8 Random",
+        "fieldSize": 8,
+        "createdAt": "2025-09-05T04:39:43.469Z"
+    },
+    {
+        "id": 5,
+        "title": "14x14",
+        "fieldSize": 14,
+        "createdAt": "2025-09-05T04:32:10.517Z"
+    },
+    {
+        "id": 4,
+        "title": "24x24 Random",
+        "fieldSize": 24,
+        "createdAt": "2025-05-04T14:39:30.112Z"
+    },
+    {
+        "id": 3,
+        "title": "16x16 Random",
+        "fieldSize": 16,
+        "createdAt": "2025-05-04T14:37:49.186Z"
+    },
+    {
+        "id": 2,
+        "title": "8x8 ",
+        "fieldSize": 8,
+        "createdAt": "2025-05-04T14:14:26.976Z"
+    },
+    {
+        "id": 1,
+        "title": "4x4 Sample",
+        "fieldSize": 4,
+        "createdAt": "2025-05-03T17:00:53.512Z"
+    }
+]

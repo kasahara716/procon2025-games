@@ -1,8 +1,6 @@
 'use client';
 
 import {
-    Box,
-    Pagination,
     Paper,
     Skeleton,
     Table,
@@ -12,26 +10,19 @@ import {
     TableHead,
     TableRow,
 } from '@mui/material';
-import { useRouter } from 'next/navigation';
 import { useFetchAnswers } from '~/apis/answers';
 
 type Props = {
     problemId: number;
     maxPairCount: number;
-    page: number;
 };
 
-export default function Answers({ problemId, maxPairCount, page }: Props) {
-    const router = useRouter();
-    const { data, isLoading } = useFetchAnswers(problemId, (page - 1) * 100);
+export default function Answers({ problemId, maxPairCount }: Props) {
+    const { data, isLoading } = useFetchAnswers(problemId);
 
     if (isLoading) {
         return <Skeleton variant="rectangular" width="100%" height={200} />;
     }
-
-    const handleChangePage = (_: React.ChangeEvent<unknown>, page: number) => {
-        router.push(`/problem?id=${problemId}&page=${page}`);
-    };
 
     return (
         <>
@@ -46,11 +37,9 @@ export default function Answers({ problemId, maxPairCount, page }: Props) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {data?.answers.map((answer, index) => (
+                        {data?.map((answer, index) => (
                             <TableRow key={answer.id}>
-                                <TableCell>
-                                    {index + 1 + (page - 1) * 100}
-                                </TableCell>
+                                <TableCell>{index + 1}</TableCell>
                                 <TableCell>
                                     {answer.pairCount} / {maxPairCount}
                                 </TableCell>
@@ -63,15 +52,6 @@ export default function Answers({ problemId, maxPairCount, page }: Props) {
                     </TableBody>
                 </Table>
             </TableContainer>
-
-            <Box sx={{ textAlign: 'center', mt: 4 }}>
-                <Pagination
-                    sx={{ display: 'inline-block' }}
-                    count={Math.ceil((data?.totalCount || 1) / 100)}
-                    defaultPage={page}
-                    onChange={handleChangePage}
-                />
-            </Box>
         </>
     );
 }

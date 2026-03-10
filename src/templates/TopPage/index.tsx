@@ -1,35 +1,17 @@
 'use client';
 
-import {
-    Box,
-    Button,
-    Container,
-    Grid,
-    Pagination,
-    Stack,
-    Typography,
-} from '@mui/material';
+import { Button, Container, Grid, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
 import { useFetchProblems } from '~/apis/problems';
 import { TopPageLoading } from './loading';
 import ProblemItem from '~/components/ProblemItem';
-import { useRouter, useSearchParams } from 'next/navigation';
 
 export function TopPageTemplate() {
-    const searchParams = useSearchParams();
-    const page = searchParams.get('page')
-        ? Number(searchParams.get('page'))
-        : 1;
-    const { data, isLoading } = useFetchProblems(page);
-    const router = useRouter();
+    const { data, isLoading } = useFetchProblems();
 
     if (isLoading) {
         return <TopPageLoading />;
     }
-
-    const handleChangePage = (_: React.ChangeEvent<unknown>, page: number) => {
-        router.push(`/?page=${page}`);
-    };
 
     return (
         <Container>
@@ -56,7 +38,7 @@ export function TopPageTemplate() {
                         サイズ
                     </Grid>
                 </Grid>
-                {data?.problems.map(
+                {data?.map(
                     (problem: {
                         title: string;
                         id: number;
@@ -66,14 +48,6 @@ export function TopPageTemplate() {
                     ),
                 )}
             </Stack>
-            <Box sx={{ textAlign: 'center', mt: 4 }}>
-                <Pagination
-                    sx={{ display: 'inline-block' }}
-                    count={Math.ceil((data?.totalCount || 1) / 20)}
-                    defaultPage={page}
-                    onChange={handleChangePage}
-                />
-            </Box>
         </Container>
     );
 }
