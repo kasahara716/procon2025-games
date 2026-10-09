@@ -43,6 +43,7 @@ export function PlayerPageTemplate() {
 
     useEffect(() => {
         if (data) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setFieldRowData(JSON.stringify(data.fieldEntities));
             setField({ size: data.fieldSize, entities: data.fieldEntities });
         }
